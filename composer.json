@@ -1,0 +1,27 @@
+{
+    "name": "qubus/exception",
+    "description": "The Qubus Exception library provides generic exceptions that can be used in any framework or other projects.",
+    "type": "library",
+    "keywords": ["error", "exception"],
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Joshua Parker",
+            "email": "josh@joshuaparker.blog"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/QubusCMS/Exception/issues"
+    },
+    "require": {
+        "php": ">=7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Qubus\\Exception\\": "src/"
+        },
+        "files": [
+            "Helper/function.php"
+        ]
+    }
+}
