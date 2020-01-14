@@ -45,7 +45,7 @@ class QubusException extends BaseException
      *
      * @param string               $message  Exception message (optional, defaults to empty).
      * @param string               $code     Exception code (optional, defaults to empty).
-     * @param `\Liten\Exception\LitenException` | `Qubus\Exception\Error` $previous Previous exception or error (optional).
+     * @param `Qubus\Exception\BaseException` | `Qubus\Exception\Error` $previous Previous exception or error (optional).
      *
      * @uses Qubus\Exception\Error
      * @uses Qubus\Exception\Error::getErrorCode()
