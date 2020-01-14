@@ -15,6 +15,6 @@ namespace Qubus\Exception;
  * @package     Qubus Exception
  * @author      Joshua Parker <josh@joshuaparker.blog>
  */
-class Exception extends \Qubus\Exception\BaseException
+class Exception extends \Qubus\Exception\QubusException
 {
 }
