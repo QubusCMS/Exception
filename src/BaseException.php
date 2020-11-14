@@ -1,42 +1,60 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Qubus\Exception;
 
-abstract class BaseException extends \Exception implements BaseExceptionInterface
+use Exception;
+
+use function sprintf;
+
+abstract class BaseException extends Exception
 {
     /**
-     * Exception message
+     * Exception message.
+     *
      * @var string
      */
-    protected $message = 'Unknown exception';
-    private $string;
+    protected $message = 'Unknown exception.';
+    protected $string;
+
     /**
-     * User-defined exception code
-     * @var int
+     * User-defined exception code.
+     *
+     * @var int|string
      */
     protected $code = 0;
+
     /**
-     * Source filename of exception
+     * Source filename of exception.
+     *
      * @var string
      */
     protected $file;
+
     /**
-     * Source line of exception
+     * Source line of exception.
+     *
      * @var int
      */
     protected $line;
-    private $trace;
+    protected $trace;
 
-    public function __construct($message = null, $code = 0, $previous = null)
+    public function __construct(?string $message = null, $code = 0, $previous = null)
     {
-        if (!$message) {
-            throw new $this('Unknown ' . get_class($this));
+        if (! $message) {
+            throw new $this('Unknown ' . static::class);
         }
         parent::__construct($message, $code, $previous);
     }
 
     public function __toString()
     {
-        return get_class($this) . " '{$this->message}' in {$this->file}({$this->line})\n"
-            . "{$this->getTraceAsString()}";
+        return static::class . sprintf(
+            ' %s in %s(%s)',
+            $this->message,
+            $this->file,
+            $this->line,
+        ) . "\n" . sprintf('%s', $this->getTraceAsString());
     }
 }

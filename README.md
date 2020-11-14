@@ -1,12 +1,13 @@
 # Exceptions
-The Qubus Exception library provides generic exceptions that can be used in any framework or other projects.
+Framework agnostic Exception library provides generic exceptions that can be used in any framework or other projects..
 
 ## Requirements
-* PHP 7.3+
+* PHP 7.4+
 
 ## Installation
+```bash
+$ composer require qubus/exception
 ```
-composer require qubus/exception
-```
+
 ## License
-General Public License [version 3](http://www.gnu.org/licenses/gpl-3.0.html).
+MIT [License] (https://opensource.org/licenses/MIT).

@@ -1,10 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Qubus\Exception\Http\Client;
 
-class BadRequestException extends \Qubus\Exception\QubusException
+use Qubus\Exception\Exception;
+
+class BadRequestException extends Exception
 {
     public function __construct(
-        $message = 'The request could not be understood by the server due to malformed syntax. The client should not repeat the request without modifications.',
+        ?string $message = 'The request could not be understood by the server due to malformed syntax. '
+        . 'The client should not repeat the request without modifications.',
         $code = 400,
         $previous = null
     ) {
