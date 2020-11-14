@@ -1,10 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Qubus\Exception\IO\FileSystem;
 
-class FileNotWritableException extends \Qubus\Exception\QubusException
+use Qubus\Exception\IO\IOException;
+
+class FileNotWritableException extends IOException
 {
-    public function __construct($message = 'Cannot write to specified file.', $code = 403, $previous = null)
-    {
+    public function __construct(
+        ?string $message = 'Cannot write to specified file.',
+        $code = 403,
+        $previous = null
+    ) {
         parent::__construct($message, $code, $previous);
     }
 }

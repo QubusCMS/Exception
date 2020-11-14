@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Qubus\Exception;
 
 /**
@@ -11,10 +14,8 @@ namespace Qubus\Exception;
  * codes, only the first message for the first error code in the instance will be
  * accessible through the exception's methods.
  *
- * @since       1.0.0
- * @package     Qubus Exception
- * @author      Joshua Parker <josh@joshuaparker.blog>
+ * @since 1.0.0
  */
-class Exception extends \Qubus\Exception\QubusException
+class Exception extends QubusException
 {
 }
