@@ -10,4 +10,4 @@ $ composer require qubus/exception
 ```
 
 ## License
-MIT [License] (https://opensource.org/licenses/MIT).
+MIT [License](https://opensource.org/licenses/MIT).

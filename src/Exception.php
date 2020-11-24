@@ -16,6 +16,6 @@ namespace Qubus\Exception;
  *
  * @since 1.0.0
  */
-class Exception extends QubusException
+class Exception extends BaseException
 {
 }
