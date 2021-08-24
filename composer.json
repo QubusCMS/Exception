@@ -14,7 +14,7 @@
         "issues": "https://github.com/QubusPHP/Exception/issues"
     },
     "require": {
-        "php": "^7.4"
+        "php": "^7.4||^8.0"
     },
     "require-dev": {
         "laminas/laminas-coding-standard": "^2.0",
