@@ -16,29 +16,27 @@ abstract class BaseException extends Exception
      * @var string
      */
     protected $message = 'Unknown exception.';
-    protected $string;
 
     /**
      * User-defined exception code.
      *
-     * @var int|string
+     * @var int
      */
-    protected $code = 0;
+    protected int $code;
 
     /**
      * Source filename of exception.
      *
      * @var string
      */
-    protected $file;
+    protected string $file = '';
 
     /**
      * Source line of exception.
      *
      * @var int
      */
-    protected $line;
-    protected $trace;
+    protected int $line;
 
     public function __construct(?string $message = null, $code = 0, $previous = null)
     {
