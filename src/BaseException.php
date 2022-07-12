@@ -5,10 +5,12 @@ declare(strict_types=1);
 namespace Qubus\Exception;
 
 use Exception;
+use Stringable;
 
 use function sprintf;
+use Throwable;
 
-abstract class BaseException extends Exception
+abstract class BaseException extends Exception implements Stringable
 {
     /**
      * Exception message.
@@ -16,13 +18,6 @@ abstract class BaseException extends Exception
      * @var string
      */
     protected $message = 'Unknown exception.';
-
-    /**
-     * User-defined exception code.
-     *
-     * @var int
-     */
-    protected int $code;
 
     /**
      * Source filename of exception.
@@ -38,15 +33,19 @@ abstract class BaseException extends Exception
      */
     protected int $line;
 
-    public function __construct(?string $message = null, $code = 0, $previous = null)
+    public function __construct(?string $message = '', int $code = 0, ?Throwable $previous = null)
     {
         if (! $message) {
-            throw new $this('Unknown ' . static::class);
+            throw new self(
+                sprintf(
+                    'Unknown %s', static::class
+                )
+            );
         }
         parent::__construct($message, $code, $previous);
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return static::class . sprintf(
             ' %s in %s(%s)',
