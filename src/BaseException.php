@@ -10,7 +10,7 @@ use Stringable;
 use function sprintf;
 use Throwable;
 
-abstract class BaseException extends Exception implements Stringable
+class BaseException extends Exception implements Stringable
 {
     /**
      * Exception message.
