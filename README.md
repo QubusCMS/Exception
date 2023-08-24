@@ -2,7 +2,7 @@
 Framework agnostic Exception library provides generic exceptions that can be used in any framework or other projects..
 
 ## Requirements
-* PHP 8.1+
+* PHP 8.2+
 
 ## Installation
 ```bash
