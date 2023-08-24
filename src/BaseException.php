@@ -33,6 +33,9 @@ class BaseException extends Exception implements Stringable
      */
     protected int $line;
 
+    /**
+     * @throws BaseException
+     */
     public function __construct(?string $message = '', int $code = 0, ?Throwable $previous = null)
     {
         if (! $message) {
